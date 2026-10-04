@@ -1,7 +1,7 @@
 {
   "name": "starlight-letters-windows",
   "productName": "星光来信",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "main": "electron/main.js",
   "scripts": {
