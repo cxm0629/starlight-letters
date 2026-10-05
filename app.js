@@ -1,5 +1,6 @@
 const app=document.querySelector('#app');
-const STORAGE_KEY='birthday-game-24ppl-v1';
+const LEGACY_STORAGE_KEY='birthday-game-24ppl-v1';
+const STORAGE_KEY=window.location.protocol==='starlight:'?LEGACY_STORAGE_KEY:'starlight-letters-progress-v1';
 const state={data:null,screen:'start',completed:new Set(),heard:new Set(),voiceLoading:null,voiceLoadFailed:new Set(),voiceNeedsGesture:new Set(),activeVoiceChapter:1,activeVoice:null,voiceOpening:null,voiceIntroPlayed:false,voiceIntroActive:false,voiceIntroComplete:false,voiceUnlockedUntil:1,voiceCompletedStars:new Set(),voiceNewStar:null,voiceHandwritingPhase:'hidden',voiceHandwritingPlayed:false,playing:null,audio:null,game:null,pageEntering:true,renderedScreen:null};
 let transitionTimer=null,voiceOpeningTimer=null,voiceIntroTimers=[],voiceIntroRun=0,voiceRevealTimer=null,voiceHandwritingTimers=[],voiceHandwritingRun=0,voiceAnimationFrames=new Set(),endingTimers=[],endingRun=0,endingReplayRun=0,endingPhase='idle',assetNavigationRun=0,voiceLoadRun=0,backgroundImagePreloadRun=0,feedbackRun=0,feedbackDismissTimer=null;
 const MAX_BACKGROUND_IMAGE_LOADS=2;
